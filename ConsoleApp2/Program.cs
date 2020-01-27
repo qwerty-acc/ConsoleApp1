@@ -24,6 +24,10 @@ namespace ConsoleApp2
             var partitionMaxSize = config.GetSection("PartitionMaxSize").Get<long>();
             var initialPartitioningDepth = config.GetSection("InitialPartitioningDepth").Get<int>();
 
+            if (!Directory.Exists(tempFolder)){
+                Directory.CreateDirectory(tempFolder);
+            }
+
             var sw = new Stopwatch();
 
             Console.WriteLine("started");
